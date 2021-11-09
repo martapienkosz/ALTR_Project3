@@ -4,7 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/XR.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 9f155483c91064b3dbf7e7235218054b
+  - enabled: 1
+    path: Assets/Scenes/Bedroom.unity
+    guid: 6be6ddb924ca34563ae7f545e51ba8ec
+  - enabled: 1
+    path: Assets/Scenes/Bridge.unity
+    guid: 3dd8607305dcc4f019b1647b6eae6d2d
+  - enabled: 1
+    path: Assets/Scenes/Prison.unity
+    guid: 595337edebdd74dc28390b86fde51b80
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: dde18584eddb04cd8bc5cfaf5cba3a9e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 51a4377bdf5dd450991d134f7f376741, type: 2}
