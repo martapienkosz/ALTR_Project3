@@ -47,7 +47,7 @@ public class XRSceneTransitionManager : MonoBehaviour
     {
         if (!isLoading)
         {
-            StartCoroutine(Load(name));
+            StartCoroutine(Load(scene));
 
         }
     }
@@ -75,12 +75,14 @@ public class XRSceneTransitionManager : MonoBehaviour
 
     IEnumerator UnLoadCurrentScene()
     {
-        AsyncOperation unload = SceneManager.UnloadSceneAsync(currentScene);
-        while (!unload.isDone)
+        if (currentScene.IsValid())
         {
-            yield return null;
+            AsyncOperation unload = SceneManager.UnloadSceneAsync(currentScene);
+            while (!unload.isDone)
+            {
+                yield return null;
+            }
         }
-
     }
 
     IEnumerator LoadNewScene(string scene)

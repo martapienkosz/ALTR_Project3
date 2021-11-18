@@ -22,12 +22,12 @@ public static class SceneSelector
         Load("Bedroom");
     }
 
-    [MenuItem("Scenes/OpenBridge")]
+    //[MenuItem("Scenes/OpenBridge")]
 
-    static void OpenBridge()
-    {
-        Load("Bridge");
-    }
+    //static void OpenBridge()
+    //{
+    //    Load("Bridge");
+    //}
 
     [MenuItem("Scenes/OpenPrison")]
 
