@@ -29,8 +29,15 @@ public static class SceneSelector
     //    Load("Bridge");
     //}
 
-    [MenuItem("Scenes/OpenPrison")]
+    [MenuItem("Scenes/OpenCorridor")]
 
+    static void OpenCorridor()
+    {
+        Load("Corridor");
+    }
+
+    [MenuItem("Scenes/OpenPrison")]
+       
     static void OpenPrison()
     {
         Load("Prison");

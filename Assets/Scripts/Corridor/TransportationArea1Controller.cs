@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class TransportationArea1Controller : MonoBehaviour
 {
-    public bool cnt1 = false;
+	public GameObject transportationarea1;
+    public float cnt1;
+	
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Camera")
+        if(other.gameObject.CompareTag("XRRig"))
         {
-            cnt1 = true;
+		Debug.Log("is true");
+		cnt1 = 1.0f;
         }
     }
 }
-

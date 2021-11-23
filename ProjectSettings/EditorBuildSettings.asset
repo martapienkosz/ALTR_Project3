@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bedroom.unity
     guid: 6be6ddb924ca34563ae7f545e51ba8ec
-  - enabled: 0
-    path: Assets/Scenes/Prison.unity
+  - enabled: 1
+    path: Assets/Scenes/Corridor.unity
     guid: 595337edebdd74dc28390b86fde51b80
+  - enabled: 1
+    path: Assets/Scenes/Prison.unity
+    guid: e02d5eeaf50264097ace89577b0bcda8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: dde18584eddb04cd8bc5cfaf5cba3a9e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 51a4377bdf5dd450991d134f7f376741, type: 2}

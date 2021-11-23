@@ -2,36 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MoveCastle5 : MonoBehaviour
 {
-    public Vector3 start = Vector3.zero;
-    public Vector3 end = Vector3.zero;
+    public Transform start;
+    public Transform end;
     public float duration = 8;
 
-    public TransportationArea4Controller transportationarea4;
+    public GameObject castle5;
 
     float currentT = 0;
     AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
-    // Start is called before the first frame update
-    void Start()
+    public void movePlatform5()
     {
-        currentT = 0;
-        transform.position = start;
+        StartCoroutine(MovePlatform());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator MovePlatform()
     {
-        if (transportationarea4.cnt4 == true)
+        while (castle5.transform.position != end.position)
         {
-            if (transform.position != end)
-            {
-                currentT += Time.deltaTime / duration;
-                currentT = Mathf.Clamp01(currentT);
-                transform.position = Vector3.Lerp(start, end, curve.Evaluate(currentT));
-		Debug.Log("MOVE");;
-            }
+            currentT += Time.deltaTime / duration;
+            currentT = Mathf.Clamp01(currentT);
+            castle5.transform.position = Vector3.Lerp(start.position, end.position, curve.Evaluate(currentT));
+            yield return null;
         }
     }
 }
+ 

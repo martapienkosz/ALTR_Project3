@@ -7,7 +7,7 @@ public class TransportationArea3Controller : MonoBehaviour
     public bool cnt3 = false;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Camera")
+        if(other.gameObject.tag == "XRRig")
         {
             cnt3 = true;
         }

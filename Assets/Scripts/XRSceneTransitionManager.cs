@@ -12,12 +12,17 @@ public class XRSceneTransitionManager : MonoBehaviour
 {
     public static XRSceneTransitionManager Instance;
 
+    public Material transitionMaterial;
+    public float transitionSpeed = 0.0f;
+
+
     public bool isLoading { get; private set; } = false;
 
     public string initialScene;
 
     Scene xrScene;
     Scene currentScene;
+    float currentTransitionAmount = 0.0f;
 
     // Start is called before the first frame update
     private void Awake()
@@ -66,10 +71,11 @@ public class XRSceneTransitionManager : MonoBehaviour
     IEnumerator Load(string scene)
     {
         isLoading = true;
-
+        yield return StartCoroutine(Fade(1.0f));
         yield return StartCoroutine(UnLoadCurrentScene());
 
         yield return StartCoroutine(LoadNewScene(scene));
+        yield return StartCoroutine(Fade(0.0f));
         isLoading = false;
     }
 
@@ -108,6 +114,18 @@ public class XRSceneTransitionManager : MonoBehaviour
             xrRig.transform.rotation = xrRigOrigin.transform.rotation;
 
         }
+    }
+
+    IEnumerator Fade(float target)
+    {
+
+        while (!Mathf.Approximately(currentTransitionAmount, target))
+        {
+            currentTransitionAmount = Mathf.MoveTowards(currentTransitionAmount, target, transitionSpeed * Time.deltaTime);
+            transitionMaterial.SetFloat("_FadeAmount", currentTransitionAmount);
+             yield return null;
+        }
+        transitionMaterial.SetFloat("_FadeAmount", target);
     }
 }
 
