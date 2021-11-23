@@ -6,19 +6,19 @@ using UnityEngine.AI;
 
 public class BirdController : MonoBehaviour
 {
-    private bool step1Start = false;
-    private bool step1Complete = false;
-    private bool step2Complete = false;
-    private bool step3Complete = false;
+    //private bool step1Start = false;
+    //private bool step1Complete = false;
+    //private bool step2Complete = false;
+    //private bool step3Complete = false;
 
 
     // waterGrab first, portraitActive next
 
-    public bool waterGrab;
-    public bool waterExit;
+    //public bool waterGrab;
+    //public bool waterExit;
 
-    public bool portraitActive;
-    public bool portraitDisactive;
+    //public bool portraitActive;
+    //public bool portraitDisactive;
 
     public Transform userLocation;
 
@@ -27,17 +27,14 @@ public class BirdController : MonoBehaviour
     public Transform CTA_portriatLocation;
     public Transform CTA_leaveLocation;
 
+    // Search AudioSource
     public AudioSource birdDialogue1;
     public AudioSource birdDialogue2;
     public AudioSource birdDialogue3;
 
 
 
-    //reference to check whether each of the actions are complete
-    //public checkWaterState waterState;
-    //public checkPortraitState portraitState;
-
-    AudioSource AudioClip;
+    //CTA=Call to Action;
 
     IEnumerator Start()
     {
@@ -104,89 +101,5 @@ public class BirdController : MonoBehaviour
         }
     }
 
-    //IEnumerator AlignWith(Transform rotation)
-    //{
-    //    while(Vector3.Dot(transform.forward, rotation.forward) < 1.0)
-    //    {
-    //        transform.LookAt(rotation, rotation.position);
-    //        yield return null;
-    //    }
-    //}
-
-
-    //private void Update()
-    //{
-    //    waterGrab = waterState.waterGrabbed;
-    //    waterExit = waterState.waterisOut;
-
-    //    portraitActive = portraitState.portraitStart;
-    //    portraitDisactive = portraitState.portraitStop;
-
-
-    //    if (step1Start == true)
-    //    {
-    //        checkAction1();
-    //    }
-
-
-    //    if (step1Complete)
-    //    {
-    //        birdMove1();
-
-    //        checkAction2();
-    //        step1Complete = false;
-    //    }
-
-    //    if (step2Complete)
-    //    {
-    //        birdMove2();
-    //        //check action3
-    //        checkAction3();
-    //        step2Complete = false;
-    //    }
-
-    //    if (step3Complete)
-    //    {
-    //        birdMove3();
-    //        //check action3
-    //        checkAction3();
-    //        step2Complete = false;
-    //    }
-
-
-    //    private void Step1Start()
-    //    {
-    //        audiobird1.play();
-    //        Step1Start = true;
-    //    }
-
-
-    //    public void checkAction1()
-    //    {
-    //        if (waterGrab == true && waterExit == true)
-    //        {
-    //            step1Complete = true;
-    //        }
-    //    }
-
-
-    //public void checkAction2()
-    //{
-    //    if (portraitActive == true && portraitDisactive == true)
-    //    {
-    //        step1Complete = true;
-    //    }
-    //}
-
-    //public void checkAction3()
-    //{
-    //    if (waterGrab == true && waterExit == true)
-    //    {
-    //        step1Complete = true;
-    //    }
-    //}
-
-
-
-//}
+   
 }
