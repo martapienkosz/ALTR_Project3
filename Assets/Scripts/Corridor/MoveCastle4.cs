@@ -7,7 +7,9 @@ public class MoveCastle4 : MonoBehaviour
 {
     public Transform start;
     public Transform end;
-    public float duration = 8;
+    public float duration = 15;
+
+    public AudioSource platform4MoveSound;
 
     public GameObject castle4;
 
@@ -21,6 +23,7 @@ public class MoveCastle4 : MonoBehaviour
 
     IEnumerator MovePlatform()
     {
+        platform4MoveSound.Play();
         while (castle4.transform.position != end.position)
         {
             currentT += Time.deltaTime / duration;
@@ -28,5 +31,6 @@ public class MoveCastle4 : MonoBehaviour
             castle4.transform.position = Vector3.Lerp(start.position, end.position, curve.Evaluate(currentT));
             yield return null;
         }
+        platform4MoveSound.Stop();
     }
 }

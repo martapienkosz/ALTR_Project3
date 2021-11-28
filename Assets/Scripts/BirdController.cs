@@ -6,10 +6,10 @@ using UnityEngine.AI;
 
 public class BirdController : MonoBehaviour
 {
-    private bool step1Start = false;
-    private bool step1Complete = false;
-    private bool step2Complete = false;
-    private bool step3Complete = false;
+    //private bool step1Start = false;
+    //private bool step1Complete = false;
+    //private bool step2Complete = false;
+    //private bool step3Complete = false;
 
 
     // waterGrab first, portraitActive next
@@ -41,14 +41,16 @@ public class BirdController : MonoBehaviour
 
     IEnumerator Start()
     {
+
+        yield return new WaitForSeconds(6);
         CTA_drink();
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(10);
         CTA_portrait();
 
         yield return WaitForBirdToReachDesitnation();
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(18);
         CTA_leave();
     }
 
