@@ -39,19 +39,24 @@ public class BirdController : MonoBehaviour
 
     AudioSource AudioClip;
 
-    IEnumerator Start()
+    //IEnumerator Start()
+    //{
+
+    //    CTA_drink();
+
+    //    yield return new WaitForSeconds(20);
+    //    CTA_portrait();
+
+    //    yield return WaitForBirdToReachDesitnation();
+
+    //    yield return new WaitForSeconds(20);
+    //    CTA_leave();
+    //}
+
+
+    private void Start()
     {
-
-        yield return new WaitForSeconds(6);
         CTA_drink();
-
-        yield return new WaitForSeconds(10);
-        CTA_portrait();
-
-        yield return WaitForBirdToReachDesitnation();
-
-        yield return new WaitForSeconds(18);
-        CTA_leave();
     }
 
 
@@ -60,6 +65,7 @@ public class BirdController : MonoBehaviour
         birdDialogue1.Play();   
 
     }
+
 
     public void CTA_portrait()
     {
@@ -114,81 +120,4 @@ public class BirdController : MonoBehaviour
     //        yield return null;
     //    }
     //}
-
-
-    //private void Update()
-    //{
-    //    waterGrab = waterState.waterGrabbed;
-    //    waterExit = waterState.waterisOut;
-
-    //    portraitActive = portraitState.portraitStart;
-    //    portraitDisactive = portraitState.portraitStop;
-
-
-    //    if (step1Start == true)
-    //    {
-    //        checkAction1();
-    //    }
-
-
-    //    if (step1Complete)
-    //    {
-    //        birdMove1();
-
-    //        checkAction2();
-    //        step1Complete = false;
-    //    }
-
-    //    if (step2Complete)
-    //    {
-    //        birdMove2();
-    //        //check action3
-    //        checkAction3();
-    //        step2Complete = false;
-    //    }
-
-    //    if (step3Complete)
-    //    {
-    //        birdMove3();
-    //        //check action3
-    //        checkAction3();
-    //        step2Complete = false;
-    //    }
-
-
-    //    private void Step1Start()
-    //    {
-    //        audiobird1.play();
-    //        Step1Start = true;
-    //    }
-
-
-    //    public void checkAction1()
-    //    {
-    //        if (waterGrab == true && waterExit == true)
-    //        {
-    //            step1Complete = true;
-    //        }
-    //    }
-
-
-    //public void checkAction2()
-    //{
-    //    if (portraitActive == true && portraitDisactive == true)
-    //    {
-    //        step1Complete = true;
-    //    }
-    //}
-
-    //public void checkAction3()
-    //{
-    //    if (waterGrab == true && waterExit == true)
-    //    {
-    //        step1Complete = true;
-    //    }
-    //}
-
-
-
-//}
 }

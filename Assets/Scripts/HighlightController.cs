@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class HighlightController : MonoBehaviour
 {
-    public SkinnedMeshRenderer skinnedMeshRenderer;
-    public float highlightSpeed = 15.0f;
+    public Material highlightableMaterial;
+    public float highlightSpeed = 40.0f;
 
-    float currentHighlightAmount = 0.5f;
+    float currentHighlightAmount = 0.1f;
 
+
+    //private void Start()
+    //{
+    //    currentHighlightAmount = 1.0f;
+    //    highlightableMaterial.SetFloat("_GlowAmount", currentHighlightAmount);
+    //}
 
     public void StartHighlight()
     {
-        StartCoroutine(Highlight(0.81f));
+        StartCoroutine(Highlight(0.9f));
     }
 
     IEnumerator Highlight(float target)
     {
-        while (Mathf.Approximately(currentHighlightAmount, target))
+        while (!Mathf.Approximately(currentHighlightAmount, target))
         {
             currentHighlightAmount = Mathf.MoveTowards(currentHighlightAmount, target, highlightSpeed * Time.deltaTime);
 
-            skinnedMeshRenderer.material.SetFloat("_GlowAmount", currentHighlightAmount);
+            highlightableMaterial.SetFloat("_GlowAmount", currentHighlightAmount);
 
-            yield return null;
+            yield return new WaitForSeconds(0.2f);
         }
     }
 

@@ -94,7 +94,10 @@ public class XRSceneTransitionManager : MonoBehaviour
     IEnumerator LoadNewScene(string scene)
     {
         AsyncOperation load = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
-        yield return null;
+        while (!load.isDone)
+        {
+            yield return null;
+        }
 
     }
 
