@@ -15,6 +15,13 @@ public static class SceneSelector
         Load("Lobby");
     }
 
+    [MenuItem("Scenes/OpenDream")]
+
+    static void OpenDream()
+    {
+        Load("Dream");
+    }
+
     [MenuItem("Scenes/OpenBedroom")]
 
     static void OpenBedroom()
@@ -22,13 +29,7 @@ public static class SceneSelector
         Load("Bedroom");
     }
 
-    //[MenuItem("Scenes/OpenBridge")]
-
-    //static void OpenBridge()
-    //{
-    //    Load("Bridge");
-    //}
-
+    
     [MenuItem("Scenes/OpenCorridor")]
 
     static void OpenCorridor()

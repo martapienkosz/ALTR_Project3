@@ -119,7 +119,11 @@ public class XRSceneTransitionManager : MonoBehaviour
         }
     }
 
-    IEnumerator Fade(float target)
+    //call this line from any script to fade the screen to black
+    //StartCoroutine(XRSceneTransitionManager.Instance.Fade(1.0f));
+
+    //
+    public IEnumerator Fade(float target)
     {
 
         while (!Mathf.Approximately(currentTransitionAmount, target))

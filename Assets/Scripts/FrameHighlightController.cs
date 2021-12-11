@@ -10,7 +10,11 @@ public class FrameHighlightController : MonoBehaviour
     Material highlightMaterial;
     float currentHighlightAmount = 0.5f;
     bool highlightEnabled = true;
+   // bool portraitAudioEnabled = true;
 
+    //public AudioSource PortraitAudio;
+    
+    
     Coroutine highlightCoroutine;
 
     private void Awake()
@@ -55,11 +59,13 @@ public class FrameHighlightController : MonoBehaviour
     public void EnableHighlight()
     {
         highlightEnabled = true;
+        //portraitAudioEnabled = true;
     }
 
     public void DisableHighlight()
     {
         highlightEnabled = false;
+        //portraitAudioEnabled = false;
     }
 
 }

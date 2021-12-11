@@ -6,6 +6,7 @@ public class FilesTriggerArea : MonoBehaviour
 {
     public AudioSource filesDialogue;
     public float cnt = 0.1f;
+    public bool npc = false;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -17,12 +18,17 @@ public class FilesTriggerArea : MonoBehaviour
 
     IEnumerator PlayDialogue()
     {
-        while (!filesDialogue.isPlaying && cnt == 0.1f)
+        while (!filesDialogue.isPlaying && cnt == 0.1f && npc == false)
         {
-            // transform.LookAt(userLocation.position, Vector3.up);
+            if(npc == true)
+            {
+                filesDialogue.Stop();
+            }
+ 
             filesDialogue.Play();
             cnt = 1.0f;
             yield return null;
+            
         }
     }
 }

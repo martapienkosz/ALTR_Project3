@@ -9,11 +9,14 @@ public class NPCController : MonoBehaviour
     public float cnt = 0.1f;
 
     public AudioSource npcDialogue;
-    //public Transform userLocation;
+    public Transform userLocation;
 
     public NavMeshAgent agent;
     public bool enableFollowing = false;
     public float interval = 1.0f;
+    public FilesTriggerArea filestrigger;
+
+    public Animator animator;
 
     float timer = 0;
 
@@ -29,10 +32,12 @@ public class NPCController : MonoBehaviour
 
         if (enableFollowing)
         {
+            //transform.LookAt(xrRig.transform);
             StartCoroutine(PlayDialogue());
             if (timer >= interval)
             {
-                agent.GetComponent<Animation>().Play("Walking");
+                animator.SetBool("isWalking", true);
+
                 Vector3 pos = xrRig.transform.position;
                 pos.y = 0; //the floor
                 agent.SetDestination(pos);
@@ -40,13 +45,15 @@ public class NPCController : MonoBehaviour
             }
             else
             {
-                agent.GetComponent<Animation>().Play("Standing");
+                //agent.GetComponent<Animation>().Play("Standing");
+                animator.SetBool("isWalking", false);
                 timer += Time.deltaTime;
             }
         }
 
         IEnumerator PlayDialogue()
         {
+            filestrigger.filesDialogue.Stop();
             while (!npcDialogue.isPlaying && cnt == 0.1f)
             {
                 // transform.LookAt(userLocation.position, Vector3.up);
