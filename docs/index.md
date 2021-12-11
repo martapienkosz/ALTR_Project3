@@ -1,10 +1,24 @@
-# Your Documentation Title
+# Royal Choice
 
-A description might go here.
+Alternate Realities Project by Marta Pienkosz and Jasmin Shi. 
+![ image](FogSettings.png)
 
-## Sub Heading
+## Plot
 
 Some more text.
+
+## Progress
+
+### Lobby
+
+### Dream
+
+### Bedroom
+
+### Corridor
+
+### Prison
+
 
 ### Another sub sub heading
 
